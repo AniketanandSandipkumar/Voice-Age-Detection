@@ -6,9 +6,7 @@ import os
 import subprocess
 import sys
 
-# install tensorflow dynamically (compatible version)
-subprocess.check_call([sys.executable, "-m", "pip", "install", "tensorflow==2.17.0"])
-from tensorflow.keras.models import load_model
+from keras.models import load_model
 
 st.set_page_config(page_title="Voice Age Detection", layout="centered")
 
