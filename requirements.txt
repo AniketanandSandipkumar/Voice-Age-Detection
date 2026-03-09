@@ -1,5 +1,5 @@
-streamlit==1.37.0
-tensorflow-cpu==2.16.1
-librosa==0.10.2.post1
-soundfile
+streamlit
 numpy
+librosa
+soundfile
+h5py
