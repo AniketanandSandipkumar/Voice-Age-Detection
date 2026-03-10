@@ -3,9 +3,7 @@ import numpy as np
 import librosa
 import tempfile
 import os
-import subprocess
-import sys
-
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 from tensorflow.keras.models import load_model
 
 st.set_page_config(page_title="Voice Age Detection", layout="centered")
@@ -16,8 +14,8 @@ st.write("⚠️ This system processes **male voices only** as per internship ta
 # Load models once
 @st.cache_resource
 def load_models():
-    gender_model = load_model("voice_gender.h5", compile=False)
-    age_model = load_model("voice_age.h5", compile=False)
+    gender_model = load_model("src/voice_gender.h5", compile=False)
+    age_model = load_model("src/voice_age.h5", compile=False)
     return gender_model, age_model
 
 voice_gender_model, voice_age_model = load_models()
